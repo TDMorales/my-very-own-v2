@@ -7,7 +7,7 @@ export const ServicesContainer = styled.div`
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    background: linear-gradient(#5C8A8D, #5D7C9F);
+    background: linear-gradient(#5C8A8D, #66BE9A);
 
     @media screen and (max-width: 786px){
         height: 1100px;
