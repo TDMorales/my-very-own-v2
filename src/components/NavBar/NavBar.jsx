@@ -1,4 +1,5 @@
-import { React, useState } from 'react'
+import { React, useEffect, useState } from 'react'
+import { navList, navListAuth } from './NavBarData'
 import {
     Nav,
     NavBarContainer,
@@ -10,8 +11,16 @@ import {
 import { FaBars } from 'react-icons/fa'
 
 const NavBar = () => {
-    const navOptions = ["HOME", "SIGN IN", "SIGN UP", "ABOUT US"];
-    const authNavOptions = ["HOME", "PROFILE", "SETTINGS", "LOG OUT"];
+    const [navOptions, setNavOptions] = useState([])
+    const [authUser, setAuthUser] = useState(false)
+
+    useEffect(() => {
+        handleNavOptions()
+    })
+
+    const handleNavOptions = () => {
+        authUser ? setNavOptions(navListAuth) : setNavOptions(navList)
+    }
 
     return (
         <>
@@ -21,18 +30,11 @@ const NavBar = () => {
                         <FaBars />
                     </HamburgerMenu>
                     <NavMenu>
-                        < NavItem >
-                            <NavLink to="home">HOME</NavLink>
-                        </NavItem>
-                        < NavItem >
-                            <NavLink to="about">ABOUT</NavLink>
-                        </NavItem>
-                        < NavItem >
-                            <NavLink to="services">OUR SERVICES</NavLink>
-                        </NavItem>
-                        < NavItem >
-                            <NavLink to="about">SIGN UP</NavLink>
-                        </NavItem>
+                        {navOptions.map((nav) => (
+                            < NavItem >
+                                <NavLink to={nav.link} key={nav.name}>{nav.name}</NavLink>
+                            </NavItem>
+                        ))}
                     </NavMenu>
                 </NavBarContainer>
             </Nav >

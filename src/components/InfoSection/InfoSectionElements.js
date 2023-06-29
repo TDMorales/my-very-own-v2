@@ -8,6 +8,7 @@ export const InfoContainer = styled.div`
     @media screen and (max-width: 768px){
         padding: 100px 0;
     }
+    font-family: 'Alice', serif;
 `
 
 export const InfoWrapper = styled.div`
@@ -58,6 +59,7 @@ export const TopLine = styled.p`
     letter-spacing: 1.4px;
     text-transform: uppercase;
     margin-bottom: 16px;
+    font-style: 'Alice', serif;
 `
 
 export const Heading = styled.h1`
@@ -77,6 +79,7 @@ export const Subtitle = styled.p`
     margin-bottom: 35px;
     font-size: 18px;
     line-height: 24px;
+    font-family: 'Alice', serif;
     color: ${({ darkText }) => (darkText ? '#010606' : '#fff')};
 `
 
@@ -95,4 +98,5 @@ export const Img = styled.img`
     height: 50vh;
     margin: 0 0 10px 0;
     padding-right: 0;
+    
 `
