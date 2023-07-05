@@ -7,7 +7,7 @@ export const ServicesContainer = styled.div`
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    background: linear-gradient(#5C8A8D, #66BE9A);
+    background: linear-gradient(#538498, #5C8A8D);
 
     @media screen and (max-width: 786px){
         height: 1100px;
@@ -78,6 +78,7 @@ export const ServicesH2 = styled.h2`
 `
 
 export const ServicesP = styled.p`
+    font-family: 'Alice', serif;
     font-size: 1rem;
     text-align: center;
 `

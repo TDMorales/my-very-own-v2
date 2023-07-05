@@ -11,18 +11,18 @@ const ServicesSection = () => {
             <ServicesWrapper>
                 <ServicesCard>
                     <ServicesIcon src={icon1} />
-                    <ServicesH2>Reduce Expenses</ServicesH2>
-                    <ServicesP>We help reduce your fees and increase your overall revenue.</ServicesP>
+                    <ServicesH2>Basic Plan</ServicesH2>
+                    <ServicesP>Create an account for free! Store up to 10 pictures and videos after you create an account.</ServicesP>
                 </ServicesCard>
                 <ServicesCard>
                     <ServicesIcon src={icon2} />
-                    <ServicesH2>Virtual Offices</ServicesH2>
-                    <ServicesP>You can connect to anyone in the world, from anywhere in the world.</ServicesP>
+                    <ServicesH2>Memorial Plan</ServicesH2>
+                    <ServicesP>Free account and QR code plate setup! Store up to 300 pictures and videos.</ServicesP>
                 </ServicesCard>
                 <ServicesCard>
                     <ServicesIcon src={icon3} />
                     <ServicesH2>Premium Benefits</ServicesH2>
-                    <ServicesP>Unlock our full catalog of services to take your business to the next level.</ServicesP>
+                    <ServicesP>Unlock our full catalog of services and start to share your story throughout the ages.</ServicesP>
                 </ServicesCard>
             </ServicesWrapper>
         </ServicesContainer>

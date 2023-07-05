@@ -1,17 +1,28 @@
-import { React, useState } from 'react'
+import { React, useEffect, useState } from 'react'
+import { navList, navListAuth } from './NavBarData'
+import { useNavigate } from 'react-router-dom'
 import {
     Nav,
     NavBarContainer,
     HamburgerMenu,
     NavMenu,
     NavItem,
-    NavLink,
+    NavLinkS,
+    NavLinkR,
 } from './NavBarElements'
 import { FaBars } from 'react-icons/fa'
 
 const NavBar = () => {
-    const navOptions = ["HOME", "SIGN IN", "SIGN UP", "ABOUT US"];
-    const authNavOptions = ["HOME", "PROFILE", "SETTINGS", "LOG OUT"];
+    const [navOptions, setNavOptions] = useState([])
+    const [authUser, setAuthUser] = useState(false)
+
+    useEffect(() => {
+        handleNavOptions()
+    })
+
+    const handleNavOptions = () => {
+        authUser ? setNavOptions(navListAuth) : setNavOptions(navList)
+    }
 
     return (
         <>
@@ -21,18 +32,15 @@ const NavBar = () => {
                         <FaBars />
                     </HamburgerMenu>
                     <NavMenu>
-                        < NavItem >
-                            <NavLink to="home">HOME</NavLink>
-                        </NavItem>
-                        < NavItem >
-                            <NavLink to="about">ABOUT</NavLink>
-                        </NavItem>
-                        < NavItem >
-                            <NavLink to="services">OUR SERVICES</NavLink>
-                        </NavItem>
-                        < NavItem >
-                            <NavLink to="about">SIGN UP</NavLink>
-                        </NavItem>
+                        {navOptions.map((nav) => (
+                            (nav.name === "SIGN IN" || nav.name === "SIGN OUT") ?
+                                < NavItem >
+                                    <NavLinkR to={nav.link} key={nav.name}>{nav.name}</NavLinkR>
+                                </NavItem> :
+                                < NavItem >
+                                    <NavLinkS to={nav.link} key={nav.name}>{nav.name}</NavLinkS>
+                                </NavItem>
+                        ))}
                     </NavMenu>
                 </NavBarContainer>
             </Nav >
